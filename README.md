@@ -10,7 +10,7 @@
 
 ***
 
-#### Description
+### Description
 
 Build your own custom budget for monthly income and expenses.
 
@@ -25,7 +25,7 @@ Build your own custom budget for monthly income and expenses.
 
 ***
 
-#### Installing project dependencies
+### Installing project dependencies
 
 Use the following in the command line to install all project dependencies:
 
@@ -35,7 +35,7 @@ $ npm install
 
 ***
 
-#### Webpack configuration for Start and Build scripts
+### Webpack configuration for Start and Build scripts
 
 The Webpack scripts are configured in the *webpack.config.js* file.
 
@@ -51,7 +51,7 @@ Use `npm run build` to initialise the `webpack --mode production` production bui
 
 ***
 
-#### Git Configuration
+### Git Configuration
 
 Recommended local or global Git configuration:
 
