@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-* ##### Description
-* ##### Node.js installation and setup
-* ##### Webpack configuration for Start and Build scripts
-* ##### Git Configuration
+* **Description**
+* **Node.js installation and setup**
+* **Webpack configuration for Start and Build scripts**
+* **Git Configuration**
 
 
 ***
@@ -18,7 +18,7 @@ Build your own custom budget for monthly income and expenses.
 - [ ] Edit expense items.
 - [ ] Remove expense items.
 - [ ] Calculate **Total Expenses**.
-- [ ] Calculate **fixed cost** ie. Debt Orders.
+- [ ] Calculate **Fixed Costs** ie. Debt Orders.
 - [ ] Declare salary, tax, UIF to generate **Net Pay** figures.
 - [ ] Generate **Net Income** figures.
 - [ ] Calculate **Monthly Disposable Income**.
@@ -37,7 +37,7 @@ $ npm install
 
 #### Webpack configuration for Start and Build scripts
 
-The webpack scripts are configured in the *webpack.config.js* file.
+The Webpack scripts are configured in the *webpack.config.js* file.
 
 ```
 npm run start
