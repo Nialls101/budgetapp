@@ -40,14 +40,14 @@ $ npm install
 The Webpack scripts are configured in the *webpack.config.js* file.
 
 ```
-npm run start
+npm run dev
 ```
-Use `npm run start` to initialise the `webpack-dev-server --mode development` development script that is setup in the *webpack.config.js* file.
+Use `npm run dev` to initialise the `webpack-dev-server --mode development` development script that is setup in the *webpack.config.js* file.
 
 ```
-npm run build
+npm run prod
 ```
-Use `npm run build` to initialise the `webpack --mode production` production build script. This creates the distribution directory called **build**.
+Use `npm run prod` to initialise the `webpack --mode production` production build script. This creates the distribution directory called **build**.
 
 ***
 
