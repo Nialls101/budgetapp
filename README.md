@@ -33,10 +33,16 @@ $ npm install
 
 #### Webpack configuration for Start and Build scripts
 
-The webpack scripts are configured in the * * webpack.config.js * * file.
+The webpack scripts are configured in the *webpack.config.js* file.
 
-Use `npm run start` to initialise the `webpack-dev-server --mode development` development script that is setup in the * * webpack.config.js * * file.
+```
+npm run start
+```
+Use `npm run start` to initialise the `webpack-dev-server --mode development` development script that is setup in the *webpack.config.js* file.
 
+```
+npm run build
+```
 Use `npm run build` to initialise the `webpack --mode production` production build script. This creates the distribution directory called **build**.
 
 ***
