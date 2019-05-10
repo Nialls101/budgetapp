@@ -14,10 +14,14 @@
 
 Build your own custom budget for monthly income and expenses.
 
-* Add, Edit or remove expense items to calculate **Total Expenses**.
-* Calculate fixed cost ie. Debt Orders.
-* Declare salary, tax, UIF to generate **Net Pay** and finally **Net Income** figures.
-* Calculate **Monthly Disposable Income**.
+- [ ] Add expense items.
+- [ ] Edit expense items.
+- [ ] Remove expense items.
+- [ ] Calculate **Total Expenses**.
+- [ ] Calculate **fixed cost** ie. Debt Orders.
+- [ ] Declare salary, tax, UIF to generate **Net Pay** figures.
+- [ ] Generate **Net Income** figures.
+- [ ] Calculate **Monthly Disposable Income**.
 
 ***
 
