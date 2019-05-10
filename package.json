@@ -2,7 +2,7 @@
   "name": "budgetapp",
   "version": "1.0.0",
   "description": "Build your own custom budget for monthly income and expenses.",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
