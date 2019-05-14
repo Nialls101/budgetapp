@@ -1,4 +1,4 @@
-# Simple Budget Application
+# OnBudget - Budget and expenses calculator
 
 ## Table of Contents
 
