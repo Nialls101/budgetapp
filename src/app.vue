@@ -35,7 +35,8 @@ export default {
                 monthlyDispIncome: ''
               },
           ],
-          title: 'OnBudget - Budget and expenses calculator'
+          title: 'OnBudget',
+          subtitle: ' - Budget and expenses calculator'
         }
     },
     methods: {

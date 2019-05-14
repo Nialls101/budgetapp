@@ -1,5 +1,5 @@
 <template>
-    <div id="expenses">
+    <div class="d-visible" id="expenses">
       <SortableList lockAxis="y" v-model="items">
         <SortableItem v-for="(item, index) in items" :index="index" :key="index" :item="item"/>
       </SortableList>
@@ -20,7 +20,17 @@ const SortableItem = {
   mixins: [ElementMixin],
   props: ['item'],
   template: `
-    <li class="list-item"><span class="handle"></span> {{item}}</li>
+    <li class="list-item"><span class="list-item--content">
+      <span class="handle"></span> {{item}}</span>
+      <span class="list-item--actions">
+        <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Edit" >
+          <i class="icon icon-edit"></i>
+        </button>
+        <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Delete" >
+          <i class="icon icon-delete"></i>
+        </button>
+      </span>
+    </li>
   `,
 };
 
@@ -40,5 +50,8 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
+li {
+  margin-top: 0;
+}
 </style>
