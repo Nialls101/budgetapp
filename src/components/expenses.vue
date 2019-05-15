@@ -1,7 +1,7 @@
 <template>
     <div id="expenses">
       <SortableList lockAxis="y" v-model="items">
-        <SortableItem v-for="(item, index) in items" :index="index" :key="index" :item="item"/>
+        <SortableItem v-for="(item, index) in items" :index="index" :key="index" :item="item.title" :amount="item.amount"/>
       </SortableList>
     </div>
 </template>
@@ -18,10 +18,10 @@ const SortableList = {
 
 const SortableItem = {
   mixins: [ElementMixin],
-  props: ['item'],
+  props: ['item', 'amount'],
   template: `
     <li class="list-item"><span class="list-item--content">
-      <span class="handle"></span> {{item}}</span>
+      <span class="handle"></span> {{item}} - R{{amount}}</span>
       <span class="list-item--actions">
         <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Fixed cost" >
           <i class="icon icon-link"></i>
@@ -46,16 +46,28 @@ export default {
     },
     data() {
       return {
-        expenseItem: [
-          {title: 'Expense', amount: '100.00', fixedCost: true},
-          {title: 'Expense', amount: '100.00', fixedCost: true},
-          {title: 'Expense', amount: '100.00', fixedCost: true},
-          {title: 'Expense', amount: '100.00', fixedCost: true}
+        newExpenseTitle: '',
+        newExpenseAmount: '',
+        newExpenseFixedCost: Boolean,
+        items: [
+          {id: '1', title: 'Expense 1', amount: '50.00', fixedCost: true},
+          {id: '2', title: 'Expense 2', amount: '50.00', fixedCost: true},
+          {id: '3', title: 'Expense 3', amount: '50.00', fixedCost: true},
+          {id: '4', title: 'Expense 4', amount: '50.00', fixedCost: true}
         ],
-        items: ['Expense 1', 'Expense 2', 'Expense 3', 'Expense 4'],
+        itemsOld: ['Expense 1', 'Expense 2', 'Expense 3', 'Expense 4'],
       };
     },
     methods: {
+      addNewExpense: function () {
+      this.expenseItem.push({
+        id: this.nextExpenseId++,
+        title: this.newExpenseTitle,
+        amount: this.newExpenseAmount,
+        fixedCost: this.newExpenseFixedCost
+      })
+      this.newExpenseTitle = ''
+    }
     }
 }
 </script>
