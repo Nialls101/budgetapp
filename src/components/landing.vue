@@ -16,6 +16,22 @@
           </div>
         </div>
       </div>
+      <div class="columns landing-buttons">
+        <div class="column col-6 col-xs-6">
+          <button class="btn btn-primary btn-sm float-left"><i class="icon icon-plus"></i> Add new expense</button>
+        </div>
+        <div class="column col-6 col-xs-6">
+          <button class="btn btn-primary btn-sm float-right"><i class="icon icon-plus"></i> Add new income</button>
+        </div>
+      </div>
+      <div v-if="toastStatus" class="columns landing-buttons">
+        <div class="column col-sm-12">
+          <div v-bind:class="{ 'toast-success': toastSuccess, 'toast-warning': toastWarning, 'toast-error': toastError }" class="toast">
+            <button class="btn btn-clear float-right"></button>
+            <p>{{ toastMessage }}</p>
+          </div>
+        </div>
+      </div>
       <div class="columns">
         <div class="column col-sm-12 landing-tabs">
           <ul class="tab tab-block">
@@ -39,6 +55,11 @@ export default {
           expenses: '65',
           savings: '25',
           disposableIncome: '10',
+          toastStatus: false,
+          toastSuccess: false,
+          toastWarning: false,
+          toastError: false,
+          toastMessage: "Default text"
         }
     },
     methods: {
@@ -50,7 +71,7 @@ export default {
   width: 100%;
   max-width: 360px;
   margin: 0 auto;
-  padding: 20px 0px 0px 0px;
+  padding: 15px 0px 0px 0px;
   background: #f3f3f3;
   box-sizing: border-box;
 }
@@ -69,13 +90,18 @@ export default {
     margin: 10px;
 }
 .landing-tabs {
-  padding: 10px 0 0 0;
+  padding: 0;
 }
-
 .landing-tabs ul {
   margin-bottom: 0;
 }
 .landing-tabs li {
   padding-bottom: 0;
+}
+.landing-buttons {
+  padding: 25px 0px 5px 0px;
+}
+.landing-info {
+  padding: 5px 0px 0px 0px;
 }
 </style>
