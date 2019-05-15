@@ -20,12 +20,14 @@ const SortableItem = {
   mixins: [ElementMixin],
   props: ['item', 'amount'],
   template: `
-    <li class="list-item"><span class="list-item--content">
-      <span class="handle"></span> {{item}} - R{{amount}}</span>
+    <li class="list-item">
+      <span class="list-item--title">
+        <span class="handle"></span> {{item}}</span>
+      </span>
+      <span class="list-item--amount">
+        R{{amount}}
+      </span>
       <span class="list-item--actions">
-        <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Fixed cost" >
-          <i class="icon icon-link"></i>
-        </button>
         <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Edit" >
           <i class="icon icon-edit"></i>
         </button>
