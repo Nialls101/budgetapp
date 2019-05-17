@@ -42,6 +42,22 @@ export default {
     methods: {
     }
 }
+
+$('.tab-item').on('click', function(){
+
+    var thisTab = this;
+
+    /* some code ... */
+
+    /* Removing active effect with slideUp: */
+    $('.active').not(thisTab).slideUp(function(){
+        $(this).removeClass('active').fadeIn();
+    });
+
+    /* After that, active the clicked tab: */
+    $(thisTab).addClass('active');
+
+});
 </script>
 
 <style>

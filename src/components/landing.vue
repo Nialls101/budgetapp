@@ -35,7 +35,7 @@
       <div class="columns">
         <div class="column col-sm-12 landing-tabs">
           <ul class="tab tab-block">
-            <li class="tab-item active"><a class="badge" href="#tabs" data-badge="8">Expenses</a></li>
+            <li class="tab-item active"><a v-bind:class="{ 'badge': expensesBadgeShow }" href="#tabs">Expenses</a></li>
             <li class="tab-item"><a href="#tabs">Income</a></li>
             <li class="tab-item"><a href="#tabs">Savings</a></li>
           </ul>
@@ -55,14 +55,32 @@ export default {
           expenses: '65',
           savings: '25',
           disposableIncome: '10',
+
           toastStatus: false,
           toastSuccess: false,
           toastWarning: false,
           toastError: false,
-          toastMessage: "Default text"
+          toastMessage: "Default text",
+
+          expensesBadgeShow: false,
+          expensesBadgeTotal: 0,
+
+          expenseAmount: 0.00,
+          newExpenseTitle: '',
+          newExpenseAmount: '',
+          newExpenseFixedCost: Boolean,
+          items: [
+            {id: '1', title: 'Expense 1', amount: 50.00, expense: true, fixedCost: true},
+            {id: '2', title: 'Expense 2', amount: 50.00, expense: true, fixedCost: false},
+            {id: '3', title: 'Expense 3', amount: 50.00, expense: true, fixedCost: true},
+            {id: '4', title: 'Expense 4', amount: 50.00, expense: true, fixedCost: true},
+            {id: '5', title: 'Expense 5', amount: 50.00, expense: true, fixedCost: false}
+          ]
         }
     },
     methods: {
+    },
+    computed: {
     }
 }
 </script>
