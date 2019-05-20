@@ -56,6 +56,8 @@ h1{
     color: #fff;
     font-size: 1rem;
     text-align: center;
+    margin-bottom: 0;
+    margin-top: 0.23em;
     text-shadow: 1px 2px #25519d
 }
 .btn-link {

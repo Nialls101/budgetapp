@@ -38,6 +38,13 @@ export default {
                 monthlyDispIncome: ''
               },
           ],
+          items: [
+            {id: '1', title: 'Expense 1', amount: 50.00, expense: true, fixedCost: true},
+            {id: '2', title: 'Expense 2', amount: 50.00, expense: true, fixedCost: false},
+            {id: '3', title: 'Expense 3', amount: 50.00, expense: true, fixedCost: true},
+            {id: '4', title: 'Expense 4', amount: 100.00, expense: true, fixedCost: true},
+            {id: '5', title: 'Expense 5', amount: 50.00, expense: true, fixedCost: false}
+          ],
           title: 'OnBudget',
           subtitle: ' - Budget and expenses calculator'
         }
