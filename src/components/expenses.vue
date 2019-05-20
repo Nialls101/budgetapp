@@ -1,7 +1,7 @@
 <template>
     <div id="expenses">
       <SortableList lockAxis="y" v-model="items">
-        <SortableItem v-for="(item, index) in items" :index="index" :key="index" :item="item.title" :amount="item.amount" :fixedCost="item.fixedCost"/>
+        <SortableItem v-for="(item, index) in items" :index="index" :key="index" :item="item.title" :amount="item.amount" :fixedCost="item.fixedCost" v-on:remove="items.splice(index, 1)"/>
       </SortableList>
     </div>
 </template>
@@ -32,7 +32,7 @@ const SortableItem = {
         <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Edit" >
           <i class="icon icon-edit"></i>
         </button>
-        <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Delete" v-on:click="$emit(\'remove\')" >
+        <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Delete" v-on:click="$emit('remove')" >
           <i class="icon icon-delete"></i>
         </button>
       </span>
@@ -74,13 +74,28 @@ export default {
           {id: '4', title: 'Expense 4', amount: 100.00, expense: true, fixedCost: true},
           {id: '5', title: 'Expense 5', amount: 50.00, expense: true, fixedCost: false}
         ],
-        test_array: [0, 1, 2, 3, 4]
+        expense: { title: '', amount: '', expense: true, fixedCost: false }
       };
     },
     methods: {
       addDecimals: function (val, oldVal) {
       const number = +val.replace(/[^\d.,]/g, '');
       return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
+    },
+    deleteItem: function (item, index) {
+      if(this.items[index] === item) {
+        this.items.splice(index, 1)
+      } else {
+        let found = this.items.indexOf(item)
+        this.items.splice(found, 1)
+      }
+    },
+    // Adds an expense to the existing events array
+    addExpense: function() {
+      if(this.expense.name) {
+        this.items.push(this.expense);
+        this.expense = { title: '', amount: '', expense: true, fixedCost: false };
+      }
     }
   },
   computed: {

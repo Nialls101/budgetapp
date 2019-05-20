@@ -9,7 +9,7 @@
             </a>
             <!-- menu component -->
             <ul class="menu">
-              <li class="menu-item"><a href="#dropdowns">item 1</a></li>
+              <li class="menu-item"><a href="#dropdowns">Expenses</a></li>
             </ul>
           </div>
         </div>

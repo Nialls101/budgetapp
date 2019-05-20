@@ -113,6 +113,7 @@ pre {
 
 .list-item--actions .icon {
   color: #5773a4;
+  pointer-events: none;
 }
 
 .stylizedList {

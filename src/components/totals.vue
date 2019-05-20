@@ -2,13 +2,13 @@
     <div id="totals">
       <div id="totalExpenses" class="columns">
         <div class="column col-12 col-xs-12 totals-row">
-          <span class="list-item--title">Total Expenses ({{ totalExpensesCount }})</span>
+          <span class="list-item--title">Total Expenses</span>
           <span class="list-item--amount">R {{ totalExpenses }}</span>
         </div>
       </div>
       <div id="fixedCosts" class="columns">
         <div class="column col-12 col-xs-12 totals-row">
-          <span class="list-item--title fixed-cost-text">Fixed Costs ({{ totalFixedCostsCount }})</span>
+          <span class="list-item--title fixed-cost-text">Fixed Costs</span>
           <span class="list-item--amount">R {{ fixedCosts }}</span>
         </div>
       </div>
@@ -24,9 +24,9 @@ export default {
     },
     data() {
       return {
-        expenses: '65',
-        savings: '25',
-        disposableIncome: '10',
+        barExpenses: '65',
+        barSavings: '25',
+        barDisposableIncome: '10',
 
         toastStatus: false,
         toastSuccess: false,
@@ -47,8 +47,7 @@ export default {
           {id: '3', title: 'Expense 3', amount: 50.00, expense: true, fixedCost: true},
           {id: '4', title: 'Expense 4', amount: 100.00, expense: true, fixedCost: true},
           {id: '5', title: 'Expense 5', amount: 50.00, expense: true, fixedCost: false}
-        ],
-        test_array: [0, 1, 2, 3, 4]
+        ]
       };
     },
     methods: {

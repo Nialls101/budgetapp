@@ -28,7 +28,7 @@
       </div>
       <div class="columns landing-buttons">
         <div class="column col-6 col-xs-6">
-          <button class="btn btn-primary btn-sm float-left"><i class="icon icon-plus"></i> Add new expense</button>
+          <button class="btn btn-primary btn-sm float-left" @click.native="greet"><i class="icon icon-plus"></i> Add new expense</button>
         </div>
         <div class="column col-6 col-xs-6">
           <button class="btn btn-primary btn-sm float-right"><i class="icon icon-plus"></i> Add new income</button>
@@ -89,6 +89,9 @@ export default {
         }
     },
     methods: {
+      greet: function() {
+        return barSavings
+      }
     },
     computed: {
     }
