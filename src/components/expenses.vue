@@ -73,8 +73,7 @@ export default {
           {id: '3', title: 'Expense 3', amount: 50.00, expense: true, fixedCost: true},
           {id: '4', title: 'Expense 4', amount: 100.00, expense: true, fixedCost: true},
           {id: '5', title: 'Expense 5', amount: 50.00, expense: true, fixedCost: false}
-        ],
-        expense: { title: '', amount: '', expense: true, fixedCost: false }
+        ]
       };
     },
     methods: {
@@ -110,12 +109,13 @@ export default {
       return this.items.reduce((acc, item) => acc + item.fixedCost, 0);
     },
     fixedCosts() {
-      let fixedCostVal = this.items.fixedCost;
-      if (fixedCostVal = true ) {
-        return this.items.reduce((acc, item) => acc + item.amount, 0);
-      } else {
-        return 0.00
-      }
+      let sum = 0;
+      this.items.filter(item => item.fixedCost == true)
+      .forEach(item => {
+        sum += parseFloat(item.amount);
+      });
+
+      return sum;
     }
   }
 }

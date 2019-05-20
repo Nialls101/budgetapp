@@ -54,7 +54,7 @@ export default {
       addDecimals: function (val, oldVal) {
       const number = +val.replace(/[^\d.,]/g, '');
       return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
-    }
+    },
   },
   computed: {
     totalExpenses() {
@@ -68,12 +68,13 @@ export default {
       return this.items.reduce((acc, item) => acc + item.fixedCost, 0);
     },
     fixedCosts() {
-      let fixedCostVal = this.items.fixedCost;
-      if (fixedCostVal = true ) {
-        return this.items.reduce((acc, item) => acc + item.amount, 0);
-      } else {
-        return 0.00
-      }
+      let sum = 0;
+      this.items.filter(item => item.fixedCost == true)
+      .forEach(item => {
+        sum += parseFloat(item.amount);
+      });
+
+      return sum;
     }
   }
 }
