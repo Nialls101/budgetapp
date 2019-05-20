@@ -10,9 +10,19 @@
       <div class="columns">
         <div class="column col-12 col-xs-12">
           <div id="progressbarHome" class="bar">
-            <div v-bind:expenses="expenses" class="bar-item tooltip" data-tooltip="Expenses" role="progressbar" v-bind:style="{ width: expenses + '%' }">{{ expenses }}%</div>
-            <div v-bind:savings="savings" class="bar-item tooltip" data-tooltip="Savings" role="progressbar" v-bind:style="{ width: savings + '%' }" style="background: #817fe3">{{ savings }}%</div>
-            <div v-bind:disposableIncome="disposableIncome" class="bar-item tooltip" data-tooltip="Disposable Income" role="progressbar" v-bind:style="{ width: expenses + '%' }" style="background: #e4ebf1; color: #000">{{ disposableIncome }}%</div>
+            <div v-bind:barExpenses="barExpenses" class="bar-item tooltip" data-tooltip="Expenses" role="progressbar" v-bind:style="{ width: barExpenses + '%' }">{{ barExpenses }}%</div>
+            <div v-bind:barSavings="barSavings" class="bar-item tooltip" data-tooltip="Savings" role="progressbar" v-bind:style="{ width: barSavings + '%' }" style="background: #817fe3">{{ barSavings }}%</div>
+            <div v-bind:barDisposableIncome="barDisposableIncome" class="bar-item tooltip" data-tooltip="Disposable Income" role="progressbar" v-bind:style="{ width: barDisposableIncome + '%' }" style="background: #e4ebf1; color: #000">{{ barDisposableIncome }}%</div>
+          </div>
+        </div>
+      </div>
+      <div class="columns landing-buttons">
+        <div class="column col-6 col-xs-6">
+          <label class="form-label" for="input-month-year">Select month and year:</label>
+        </div>
+        <div class="column col-6 col-xs-6">
+          <div class="form-group">
+            <input class="form-input" id="input-month-year" type="month" value="2019-05">
           </div>
         </div>
       </div>
@@ -52,9 +62,9 @@ export default {
     },
     data(){
         return{
-          expenses: '65',
-          savings: '25',
-          disposableIncome: '10',
+          barExpenses: '65',
+          barSavings: '25',
+          barDisposableIncome: '10',
 
           toastStatus: false,
           toastSuccess: false,
@@ -114,10 +124,11 @@ export default {
   margin-bottom: 0;
 }
 .landing-tabs li {
+  padding: 6px;
   padding-bottom: 0;
 }
 .landing-buttons {
-  padding: 25px 0px 5px 0px;
+  padding: 15px 0px 5px 0px;
 }
 .landing-info {
   padding: 5px 0px 0px 0px;

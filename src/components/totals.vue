@@ -1,58 +1,32 @@
 <template>
-    <div id="expenses">
-      <SortableList lockAxis="y" v-model="items">
-        <SortableItem v-for="(item, index) in items" :index="index" :key="index" :item="item.title" :amount="item.amount" :fixedCost="item.fixedCost"/>
-      </SortableList>
+    <div id="totals">
+      <div id="totalExpenses" class="columns">
+        <div class="column col-12 col-xs-12 totals-row">
+          <span class="list-item--title">Total Expenses ({{ totalExpensesCount }})</span>
+          <span class="list-item--amount">R {{ totalExpenses }}</span>
+        </div>
+      </div>
+      <div id="fixedCosts" class="columns">
+        <div class="column col-12 col-xs-12 totals-row">
+          <span class="list-item--title fixed-cost-text">Fixed Costs ({{ totalFixedCostsCount }})</span>
+          <span class="list-item--amount">R {{ fixedCosts }}</span>
+        </div>
+      </div>
     </div>
 </template>
 <script>
-import {ContainerMixin, ElementMixin} from 'vue-slicksort';
-
-const SortableList = {
-  mixins: [ContainerMixin],
-  template: `
-    <ul class="list" useDragHandle="true">
-      <slot />
-    </ul>
-  `,
-};
-
-const SortableItem = {
-  mixins: [ElementMixin],
-  props: ['item', 'amount', 'fixedCost'],
-  template: `
-    <li class="list-item">
-      <span class="list-item--title">
-        <span class="handle"></span> {{item}} <span class="fixed-cost-text" v-if="fixedCost">&nbsp;(FC)</span></span>
-      </span>
-      <span class="list-item--amount">
-        R{{amount}}
-      </span>
-      <span class="list-item--actions">
-        <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Edit" >
-          <i class="icon icon-edit"></i>
-        </button>
-        <button class="btn btn-sm btn-link tooltip tooltip-top" data-tooltip="Delete" v-on:click="$emit(\'remove\')" >
-          <i class="icon icon-delete"></i>
-        </button>
-      </span>
-    </li>
-  `,
-};
 
 export default {
     props: {
       amount: Number,
     },
     components: {
-      SortableItem,
-      SortableList,
     },
     data() {
       return {
-        barExpenses: '65',
-        barSavings: '25',
-        barDisposableIncome: '10',
+        expenses: '65',
+        savings: '25',
+        disposableIncome: '10',
 
         toastStatus: false,
         toastSuccess: false,
