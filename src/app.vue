@@ -1,9 +1,9 @@
 <template>
     <div>
         <app-header :title="title"></app-header>
-        <app-landing :items="items" :toastStatus="toastStatus" :toastMessage="toastMessage" :toastSuccess="toastSuccess" :toastWarning="toastWarning" :toastError="toastError" :barExpenses="barExpenses" :barSavings="barSavings" :barDisposableIncome="barDisposableIncome" ></app-landing>
-        <app-expenses :items="items"></app-expenses>
-        <app-totals :items="items"></app-totals>
+        <app-landing :items="items" :toastStatus="toastStatus" :toastMessage="toastMessage" :toastSuccess="toastSuccess" :toastWarning="toastWarning" :toastError="toastError" :barExpenses="barExpenses" :barSavings="barSavings" :barDisposableIncome="barDisposableIncome" :totalsVal="totalsVal" ></app-landing>
+        <router-view :items="items" ></router-view>
+        <app-totals :items="items" :totalsVal="totalsVal"></app-totals>
         <app-footer :title="title"></app-footer>
     </div>
 </template>
@@ -12,7 +12,7 @@
 // Imports
 import Header from './components/header.vue';
 import Footer from './components/footer.vue';
-import Landing from './components/landing.vue';
+import ShowBudgetSummary from './components/showBudgetSummary.vue';
 import ShowExpenses from './components/showExpenses.vue';
 import Totals from './components/totals.vue';
 
@@ -20,7 +20,7 @@ export default {
     components: {
         'app-header': Header,
         'app-footer': Footer,
-        'app-landing': Landing,
+        'app-landing': ShowBudgetSummary,
         'app-expenses': ShowExpenses,
         'app-totals': Totals
     },
@@ -65,6 +65,7 @@ export default {
           toastWarning: false,
           toastError: false,
           toastMessage: "Default text",
+          totalsVal: 'expense'
         }
     },
     methods: {

@@ -3,7 +3,7 @@
       <div id="totalExpenses" class="columns">
         <div class="column col-12 col-xs-12 totals-row">
           <span class="list-item--title">Total Expenses</span>
-          <span class="list-item--amount">R {{ totalAmounts('expense') }}</span>
+          <span class="list-item--amount">R {{ totalAmounts(totalsVal) }}</span>
         </div>
       </div>
       <div id="fixedCosts" class="columns">
@@ -21,6 +21,10 @@ export default {
       amount: Number,
       items: {
         type: Array,
+        required: true
+      },
+      totalsVal: {
+        type: String,
         required: true
       }
     },

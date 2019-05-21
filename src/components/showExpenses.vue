@@ -70,7 +70,8 @@ export default {
         expenseAmount: 0.00,
         newExpenseTitle: '',
         newExpenseAmount: '',
-        newExpenseFixedCost: Boolean
+        newExpenseFixedCost: Boolean,
+        totalsVal: 'expense'
       };
     },
     methods: {

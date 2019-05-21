@@ -89,6 +89,10 @@ export default {
       barDisposableIncome: {
         type: String,
         required: true
+      },
+      totalsVal: {
+        type: String,
+        required: true
       }
     },
     data(){
