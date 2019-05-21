@@ -43,6 +43,10 @@ const SortableItem = {
 export default {
     props: {
       amount: Number,
+      items: {
+        type: Array,
+        required: true
+      }
     },
     components: {
       SortableItem,
@@ -66,14 +70,7 @@ export default {
         expenseAmount: 0.00,
         newExpenseTitle: '',
         newExpenseAmount: '',
-        newExpenseFixedCost: Boolean,
-        items: [
-          {id: '1', title: 'Expense 1', amount: 50.00, expense: true, fixedCost: true},
-          {id: '2', title: 'Expense 2', amount: 50.00, expense: true, fixedCost: false},
-          {id: '3', title: 'Expense 3', amount: 50.00, expense: true, fixedCost: true},
-          {id: '4', title: 'Expense 4', amount: 100.00, expense: true, fixedCost: true},
-          {id: '5', title: 'Expense 5', amount: 50.00, expense: true, fixedCost: false}
-        ]
+        newExpenseFixedCost: Boolean
       };
     },
     methods: {
@@ -111,10 +108,7 @@ export default {
     fixedCosts() {
       let sum = 0;
       this.items.filter(item => item.fixedCost == true)
-      .forEach(item => {
-        sum += parseFloat(item.amount);
-      });
-
+      .forEach(item => sum += parseFloat(item.amount));
       return sum;
     }
   }

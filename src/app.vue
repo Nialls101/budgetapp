@@ -1,9 +1,9 @@
 <template>
     <div>
         <app-header v-bind:title="title"></app-header>
-        <app-landing></app-landing>
-        <app-expenses></app-expenses>
-        <app-totals></app-totals>
+        <app-landing v-bind:items="items"></app-landing>
+        <app-expenses v-bind:items="items"></app-expenses>
+        <app-totals v-bind:items="items"></app-totals>
         <app-footer v-bind:title="title"></app-footer>
     </div>
 </template>
