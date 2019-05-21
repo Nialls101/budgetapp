@@ -3,7 +3,7 @@
       <div id="totalExpenses" class="columns">
         <div class="column col-12 col-xs-12 totals-row">
           <span class="list-item--title">Total Expenses</span>
-          <span class="list-item--amount">R {{ totalExpenses }}</span>
+          <span class="list-item--amount">R {{ totalAmounts('expense') }}</span>
         </div>
       </div>
       <div id="fixedCosts" class="columns">
@@ -52,11 +52,25 @@ export default {
       const number = +val.replace(/[^\d.,]/g, '');
       return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
     },
+    totalAmounts: function(val) {
+      let sum = 0;
+      this.items.filter(item => item.type == val)
+      .forEach(item => {
+        sum += parseFloat(item.amount);
+        });
+
+      return sum;
+    }
   },
   computed: {
     totalExpenses() {
-      let fixedCostVal = this.items.fixedCost;
-      return this.items.reduce((acc, item) => acc + item.amount, 0);
+      let sum = 0;
+      this.items.filter(item => item.type == 'expense')
+      .forEach(item => {
+        sum += parseFloat(item.amount);
+      });
+
+      return sum;
     },
     totalExpensesCount() {
       return this.items.reduce((acc, item) => acc + item.expense, 0);
