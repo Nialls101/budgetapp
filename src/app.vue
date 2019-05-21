@@ -1,10 +1,10 @@
 <template>
     <div>
-        <app-header v-bind:title="title"></app-header>
-        <app-landing v-bind:items="items"></app-landing>
-        <app-expenses v-bind:items="items"></app-expenses>
-        <app-totals v-bind:items="items"></app-totals>
-        <app-footer v-bind:title="title"></app-footer>
+        <app-header :title="title"></app-header>
+        <app-landing :items="items" :toastStatus="toastStatus" :toastMessage="toastMessage" :toastSuccess="toastSuccess" :toastWarning="toastWarning" :toastError="toastError" :barExpenses="barExpenses" :barSavings="barSavings" :barDisposableIncome="barDisposableIncome" ></app-landing>
+        <app-expenses :items="items"></app-expenses>
+        <app-totals :items="items"></app-totals>
+        <app-footer :title="title"></app-footer>
     </div>
 </template>
 
@@ -13,7 +13,7 @@
 import Header from './components/header.vue';
 import Footer from './components/footer.vue';
 import Landing from './components/landing.vue';
-import Expenses from './components/expenses.vue';
+import ShowExpenses from './components/showExpenses.vue';
 import Totals from './components/totals.vue';
 
 export default {
@@ -21,7 +21,7 @@ export default {
         'app-header': Header,
         'app-footer': Footer,
         'app-landing': Landing,
-        'app-expenses': Expenses,
+        'app-expenses': ShowExpenses,
         'app-totals': Totals
     },
     data () {
@@ -39,14 +39,32 @@ export default {
               },
           ],
           items: [
-            {id: '1', title: 'Expense 1', amount: 50.00, expense: true, fixedCost: true},
-            {id: '2', title: 'Expense 2', amount: 50.00, expense: true, fixedCost: false},
-            {id: '3', title: 'Expense 3', amount: 50.00, expense: true, fixedCost: true},
-            {id: '4', title: 'Expense 4', amount: 100.00, expense: true, fixedCost: true},
-            {id: '5', title: 'Expense 5', amount: 50.00, expense: true, fixedCost: false}
+            {id: '1', title: 'Expense 1', amount: 50.00, type: 'expense', fixedCost: true},
+            {id: '2', title: 'Expense 2', amount: 50.00, type: 'expense', fixedCost: false},
+            {id: '3', title: 'Expense 3', amount: 50.00, type: 'expense', fixedCost: true},
+            {id: '4', title: 'Expense 4', amount: 100.00, type: 'expense', fixedCost: true},
+            {id: '5', title: 'Expense 5', amount: 50.00, type: 'expense', fixedCost: false},
+
+            {id: '6', title: 'Income 1', amount: 50.00, type: 'income', fixedCost: false},
+            {id: '7', title: 'Income 2', amount: 50.00, type: 'income', fixedCost: false},
+            {id: '8', title: 'Income 3', amount: 50.00, type: 'income', fixedCost: false},
+            {id: '9', title: 'Income 4', amount: 100.00, type: 'income', fixedCost: false},
+            {id: '10', title: 'Income 5', amount: 50.00, type: 'income', fixedCost: false},
+
+            {id: '11', title: 'Savings 1', amount: 5.00, type: 'savings', fixedCost: false},
+            {id: '12', title: 'Savings 2', amount: 10.00, type: 'savings', fixedCost: false},
+            {id: '13', title: 'Savings 3', amount: 50.00, type: 'savings', fixedCost: false}
           ],
+          barExpenses: '65',
+          barSavings: '25',
+          barDisposableIncome: '10',
           title: 'OnBudget',
-          subtitle: ' - Budget and expenses calculator'
+          subtitle: ' - Budget and expenses calculator',
+          toastStatus: false,
+          toastSuccess: false,
+          toastWarning: false,
+          toastError: false,
+          toastMessage: "Default text",
         }
     },
     methods: {

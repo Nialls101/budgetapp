@@ -10,9 +10,9 @@
       <div class="columns">
         <div class="column col-12 col-xs-12">
           <div id="progressbarHome" class="bar">
-            <div v-bind:barExpenses="barExpenses" class="bar-item tooltip" data-tooltip="Expenses" role="progressbar" v-bind:style="{ width: barExpenses + '%' }">{{ barExpenses }}%</div>
-            <div v-bind:barSavings="barSavings" class="bar-item tooltip" data-tooltip="Savings" role="progressbar" v-bind:style="{ width: barSavings + '%' }" style="background: #817fe3">{{ barSavings }}%</div>
-            <div v-bind:barDisposableIncome="barDisposableIncome" class="bar-item tooltip" data-tooltip="Disposable Income" role="progressbar" v-bind:style="{ width: barDisposableIncome + '%' }" style="background: #e4ebf1; color: #000">{{ barDisposableIncome }}%</div>
+            <div :barExpenses="barExpenses" class="bar-item tooltip" data-tooltip="Expenses" role="progressbar" :style="{ width: barExpenses + '%' }">{{ barExpenses }}%</div>
+            <div :barSavings="barSavings" class="bar-item tooltip" data-tooltip="Savings" role="progressbar" :style="{ width: barSavings + '%' }" style="background: #817fe3">{{ barSavings }}%</div>
+            <div :barDisposableIncome="barDisposableIncome" class="bar-item tooltip" data-tooltip="Disposable Income" role="progressbar" :style="{ width: barDisposableIncome + '%' }" style="background: #e4ebf1; color: #000">{{ barDisposableIncome }}%</div>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
       </div>
       <div v-if="toastStatus" class="columns landing-buttons">
         <div class="column col-sm-12">
-          <div v-bind:class="{ 'toast-success': toastSuccess, 'toast-warning': toastWarning, 'toast-error': toastError }" class="toast">
+          <div :class="{ 'toast-success': toastSuccess, 'toast-warning': toastWarning, 'toast-error': toastError }" class="toast">
             <button class="btn btn-clear float-right"></button>
             <p>{{ toastMessage }}</p>
           </div>
@@ -45,7 +45,7 @@
       <div class="columns">
         <div class="column col-sm-12 landing-tabs">
           <ul class="tab tab-block">
-            <li class="tab-item active"><a v-bind:class="{ 'badge': expensesBadgeShow }" href="#tabs">Expenses</a></li>
+            <li class="tab-item active"><a :class="{ 'badge': expensesBadgeShow }" href="#tabs">Expenses</a></li>
             <li class="tab-item"><a href="#tabs">Income</a></li>
             <li class="tab-item"><a href="#tabs">Savings</a></li>
           </ul>
@@ -58,20 +58,41 @@
 <script>
 export default {
     props: {
-
+      toastStatus: {
+        type: Boolean,
+        required: true
+      },
+      toastMessage: {
+        type: String,
+        required: true
+      },
+      toastSuccess: {
+        type: Boolean,
+        required: false
+      },
+      toastWarning: {
+        type: Boolean,
+        required: false
+      },
+      toastError: {
+        type: Boolean,
+        required: false
+      },
+      barExpenses: {
+        type: String,
+        required: true
+      },
+      barSavings: {
+        type: String,
+        required: true
+      },
+      barDisposableIncome: {
+        type: String,
+        required: true
+      }
     },
     data(){
         return{
-          barExpenses: '65',
-          barSavings: '25',
-          barDisposableIncome: '10',
-
-          toastStatus: false,
-          toastSuccess: false,
-          toastWarning: false,
-          toastError: false,
-          toastMessage: "Default text",
-
           expensesBadgeShow: false,
           expensesBadgeTotal: 0,
 
@@ -79,13 +100,7 @@ export default {
           newExpenseTitle: '',
           newExpenseAmount: '',
           newExpenseFixedCost: Boolean,
-          items: [
-            {id: '1', title: 'Expense 1', amount: 50.00, expense: true, fixedCost: true},
-            {id: '2', title: 'Expense 2', amount: 50.00, expense: true, fixedCost: false},
-            {id: '3', title: 'Expense 3', amount: 50.00, expense: true, fixedCost: true},
-            {id: '4', title: 'Expense 4', amount: 50.00, expense: true, fixedCost: true},
-            {id: '5', title: 'Expense 5', amount: 50.00, expense: true, fixedCost: false}
-          ]
+
         }
     },
     methods: {

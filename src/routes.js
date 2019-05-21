@@ -8,7 +8,7 @@ import showBudgetSummary from './components/showBudgetSummary.vue';
 
 export default [
     { path: '/', component: showBudgetSummary},
-    { path: '/expenses', component: showBlogs},
+    { path: '/expenses', component: showExpenses},
     { path: '/add-expense', component: addExpense},
     { path: '/income', component: showIncome},
     { path: '/add-income', component: addIncome},
