@@ -47,14 +47,6 @@ export default {
         type: Array,
         required: true
       },
-      totalsVal: {
-        type: String,
-        required: true,
-      },
-      totalsLabel: {
-        type: String,
-        required: true
-      },
       fixedCostsStatus: {
         type: Boolean,
         required: true
@@ -66,6 +58,8 @@ export default {
     },
     data() {
       return {
+        totalsVal: 'income',
+        totalsLabel: 'Income'
       };
     },
     methods: {

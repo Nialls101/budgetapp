@@ -72,7 +72,8 @@ export default {
         newExpenseAmount: '',
         newExpenseFixedCost: Boolean,
         totalsVal: 'expense',
-        totalsLabel: 'Expenses'
+        totalsLabel: 'Expenses',
+        expenses: []
       };
     },
     methods: {
