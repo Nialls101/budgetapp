@@ -1,9 +1,9 @@
 <template>
     <div>
         <app-header :title="title"></app-header>
-        <app-landing :items="items" :toastStatus="toastStatus" :toastMessage="toastMessage" :toastSuccess="toastSuccess" :toastWarning="toastWarning" :toastError="toastError" :barExpenses="barExpenses" :barSavings="barSavings" :barDisposableIncome="barDisposableIncome" :totalsVal="totalsVal" ></app-landing>
-        <router-view :items="items" ></router-view>
-        <app-totals :items="items" :totalsVal="totalsVal"></app-totals>
+        <app-landing :items="items" :toastStatus="toastStatus" :toastMessage="toastMessage" :toastSuccess="toastSuccess" :toastWarning="toastWarning" :toastError="toastError" :barExpenses="barExpenses" :barSavings="barSavings" :barDisposableIncome="barDisposableIncome" :totalsVal="totalsVal" :totalsLabel="totalsLabel" ></app-landing>
+        <router-view :items="items"></router-view>
+        <app-totals :items="items" :totalsVal="totalsVal" :totalsLabel="totalsLabel" :fixedCostsStatus="fixedCostsStatus" :totalCostsStatus="totalCostsStatus"></app-totals>
         <app-footer :title="title"></app-footer>
     </div>
 </template>
@@ -49,7 +49,6 @@ export default {
             {id: '7', title: 'Income 2', amount: 50.00, type: 'income', fixedCost: false},
             {id: '8', title: 'Income 3', amount: 50.00, type: 'income', fixedCost: false},
             {id: '9', title: 'Income 4', amount: 100.00, type: 'income', fixedCost: false},
-            {id: '10', title: 'Income 5', amount: 50.00, type: 'income', fixedCost: false},
 
             {id: '11', title: 'Savings 1', amount: 5.00, type: 'savings', fixedCost: false},
             {id: '12', title: 'Savings 2', amount: 10.00, type: 'savings', fixedCost: false},
@@ -65,10 +64,16 @@ export default {
           toastWarning: false,
           toastError: false,
           toastMessage: "Default text",
-          totalsVal: 'expense'
+          totalsVal: 'expense',
+          totalsLabel: 'Expenses',
+          totalCostsStatus: true,
+          fixedCostsStatus: true
         }
     },
     methods: {
+    },
+    computed: {
+
     }
 }
 

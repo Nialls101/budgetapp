@@ -45,9 +45,7 @@
       <div class="columns">
         <div class="column col-sm-12 landing-tabs">
           <ul class="tab tab-block">
-            <li class="tab-item active"><a :class="{ 'badge': expensesBadgeShow }" href="#tabs">Expenses</a></li>
-            <li class="tab-item"><a href="#tabs">Income</a></li>
-            <li class="tab-item"><a href="#tabs">Savings</a></li>
+            <router-link tag="li" v-for="tab in tabs" :key="tab" :class="['tab-item', { active: currentTab === tab }]" v-on:click="currentTab = tab" :to="`/${tab}`" ><a v-on:click.prevent href="#">{{ tab }}</a></router-link>
           </ul>
         </div>
       </div>
@@ -93,6 +91,10 @@ export default {
       totalsVal: {
         type: String,
         required: true
+      },
+      totalsLabel: {
+        type: String,
+        required: true
       }
     },
     data(){
@@ -105,11 +107,16 @@ export default {
           newExpenseAmount: '',
           newExpenseFixedCost: Boolean,
 
+          currentTab: '',
+          tabs: ['expenses', 'income', 'savings']
         }
     },
     methods: {
     },
     computed: {
+      currentTabComponent() {
+        return 'show' + this.currentTab
+      }
     }
 }
 </script>

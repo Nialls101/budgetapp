@@ -1,7 +1,7 @@
 <template>
-    <div id="showExpenses">
+    <div id="showIncome">
       <SortableList lockAxis="y" v-model="items">
-        <SortableItem v-for="(item, index) in items" v-if="item.type == 'expense'" :index="index" :key="index" :item="item.title" :amount="item.amount" :fixedCost="item.fixedCost" v-on:remove="items.splice(index, 1)"/>
+        <SortableItem v-for="(item, index) in items" v-if="item.type == 'income'" :index="index" :key="index" :item="item.title" :amount="item.amount" :fixedCost="item.fixedCost" v-on:remove="items.splice(index, 1)"/>
       </SortableList>
     </div>
 </template>
@@ -19,7 +19,7 @@ const SortableList = {
 
 const SortableItem = {
   mixins: [ElementMixin],
-  props: ['item', 'amount', 'fixedCost', 'remove'],
+  props: ['item', 'amount', 'fixedCost'],
   template: `
     <li class="list-item">
       <span class="list-item--title">
@@ -46,6 +46,18 @@ export default {
       items: {
         type: Array,
         required: true
+      },
+      totalsVal: {
+        type: String,
+        required: true,
+      },
+      totalsLabel: {
+        type: String,
+        required: true
+      },
+      fixedCostsStatus: {
+        type: Boolean,
+        required: true
       }
     },
     components: {
@@ -54,25 +66,6 @@ export default {
     },
     data() {
       return {
-        barExpenses: '65',
-        barSavings: '25',
-        barDisposableIncome: '10',
-
-        toastStatus: false,
-        toastSuccess: false,
-        toastWarning: false,
-        toastError: false,
-        toastMessage: "Default text",
-
-        expensesBadgeShow: false,
-        expensesBadgeTotal: 0,
-
-        expenseAmount: 0.00,
-        newExpenseTitle: '',
-        newExpenseAmount: '',
-        newExpenseFixedCost: Boolean,
-        totalsVal: 'expense',
-        totalsLabel: 'Expenses'
       };
     },
     methods: {
@@ -89,30 +82,14 @@ export default {
       }
     },
     // Adds an expense to the existing events array
-    addExpense: function() {
+    addIncome: function() {
       if(this.expense.name) {
         this.items.push(this.expense);
-        this.expense = { title: '', amount: '', expense: true, fixedCost: false };
+        this.income = { title: '', amount: '', type: 'income', fixedCost: false };
       }
     }
   },
   computed: {
-    totalExpenses() {
-      let fixedCostVal = this.items.fixedCost;
-      return this.items.reduce((acc, item) => acc + item.amount, 0);
-    },
-    totalExpensesCount() {
-      return this.items.reduce((acc, item) => acc + item.expense, 0);
-    },
-    totalFixedCostsCount() {
-      return this.items.reduce((acc, item) => acc + item.fixedCost, 0);
-    },
-    fixedCosts() {
-      let sum = 0;
-      this.items.filter(item => item.fixedCost == true)
-      .forEach(item => sum += parseFloat(item.amount));
-      return sum;
-    }
   }
 }
 </script>

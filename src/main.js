@@ -11,7 +11,9 @@ Vue.use(VueRouter);
 // Register routes
 const router = new VueRouter({
     routes: Routes,
-    mode: 'history'
+    mode: 'history',
+    linkActiveClass: "active",
+    linkExactActiveClass: "exact-active",
 });
 
 new Vue({

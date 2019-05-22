@@ -1,7 +1,7 @@
 <template>
-    <div id="showExpenses">
+    <div id="showIncome">
       <SortableList lockAxis="y" v-model="items">
-        <SortableItem v-for="(item, index) in items" v-if="item.type == 'expense'" :index="index" :key="index" :item="item.title" :amount="item.amount" :fixedCost="item.fixedCost" v-on:remove="items.splice(index, 1)"/>
+        <SortableItem v-for="(item, index) in items" v-if="item.type == 'savings'" :index="index" :key="index" :item="item.title" :amount="item.amount" :fixedCost="item.fixedCost" v-on:remove="items.splice(index, 1)"/>
       </SortableList>
     </div>
 </template>
@@ -19,7 +19,7 @@ const SortableList = {
 
 const SortableItem = {
   mixins: [ElementMixin],
-  props: ['item', 'amount', 'fixedCost', 'remove'],
+  props: ['item', 'amount', 'fixedCost'],
   template: `
     <li class="list-item">
       <span class="list-item--title">
@@ -71,7 +71,7 @@ export default {
         newExpenseTitle: '',
         newExpenseAmount: '',
         newExpenseFixedCost: Boolean,
-        totalsVal: 'expense',
+        totalsVal: 'savings',
         totalsLabel: 'Expenses'
       };
     },

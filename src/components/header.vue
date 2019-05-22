@@ -9,12 +9,15 @@
             </a>
             <!-- menu component -->
             <ul class="menu">
-              <li class="menu-item"><a href="#dropdowns">Expenses</a></li>
+              <li class="menu-item"><router-link tag="a" to="/">Home</router-link></li>
+              <li class="menu-item"><router-link tag="a" to="/add-expense">Add Expense</router-link></li>
+              <li class="menu-item"><router-link tag="a" to="/add-income">Add Income</router-link></li>
+              <li class="menu-item"><router-link tag="a" to="/add-savings">Add Savings</router-link></li>
             </ul>
           </div>
         </div>
         <div class="column col-xs-8 col-md-8">
-          <h1>{{ title }}</h1>
+          <h1><router-link tag="a" to="/">{{ title }}</router-link></h1>
         </div>
         <div class="column col-md-2 col-xs-2 text-right">
           <button v-bind:class="{ 'btn-success': inBudget, 'btn-error': overBudget }" class="btn btn-action tooltip tooltip-left" data-tooltip="Budget status" >
@@ -59,6 +62,10 @@ h1{
     margin-bottom: 0;
     margin-top: 0.23em;
     text-shadow: 1px 2px #25519d
+}
+.active {
+  color: #fff;
+  text-decoration: none;
 }
 .btn-link {
   color: #d9e0ed;

@@ -1,12 +1,12 @@
 <template>
     <div id="totals">
-      <div id="totalExpenses" class="columns">
+      <div v-if="totalCostsStatus" id="totalExpenses" class="columns">
         <div class="column col-12 col-xs-12 totals-row">
-          <span class="list-item--title">Total Expenses</span>
+          <span class="list-item--title">Total {{ totalsLabel }}</span>
           <span class="list-item--amount">R {{ totalAmounts(totalsVal) }}</span>
         </div>
       </div>
-      <div id="fixedCosts" class="columns">
+      <div v-if="fixedCostsStatus" id="fixedCosts" class="columns">
         <div class="column col-12 col-xs-12 totals-row">
           <span class="list-item--title fixed-cost-text">Fixed Costs</span>
           <span class="list-item--amount">R {{ fixedCosts }}</span>
@@ -26,29 +26,24 @@ export default {
       totalsVal: {
         type: String,
         required: true
+      },
+      totalsLabel: {
+        type: String,
+        required: true
+      },
+      fixedCostsStatus: {
+        type: Boolean,
+        required: true
+      },
+      totalCostsStatus: {
+        type: Boolean,
+        required: true
       }
     },
     components: {
     },
     data() {
       return {
-        barExpenses: '65',
-        barSavings: '25',
-        barDisposableIncome: '10',
-
-        toastStatus: false,
-        toastSuccess: false,
-        toastWarning: false,
-        toastError: false,
-        toastMessage: "Default text",
-
-        expensesBadgeShow: false,
-        expensesBadgeTotal: 0,
-
-        expenseAmount: 0.00,
-        newExpenseTitle: '',
-        newExpenseAmount: '',
-        newExpenseFixedCost: Boolean
       };
     },
     methods: {
@@ -67,15 +62,6 @@ export default {
     }
   },
   computed: {
-    totalExpenses() {
-      let sum = 0;
-      this.items.filter(item => item.type == 'expense')
-      .forEach(item => {
-        sum += parseFloat(item.amount);
-      });
-
-      return sum;
-    },
     totalExpensesCount() {
       return this.items.reduce((acc, item) => acc + item.expense, 0);
     },
