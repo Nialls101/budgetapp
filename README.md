@@ -14,7 +14,7 @@
 
 Build your own custom budget for monthly income and expenses.
 
-- [ ] Add expense items.
+- [x] Add expense items.
 - [ ] Edit expense items.
 - [x] Remove expense items.
 - [x] Calculate **Total Expenses**.
@@ -42,12 +42,12 @@ The Webpack scripts are configured in the *webpack.config.js* file.
 ```
 npm run dev
 ```
-Use `npm run dev` to initialise the `webpack-dev-server --mode development` development script that is setup in the *webpack.config.js* file.
+Use `npm run dev` to initialise the `cross-env NODE_ENV=development webpack-dev-server --open --hot` development script that is setup in the *webpack.config.js* file.
 
 ```
 npm run prod
 ```
-Use `npm run prod` to initialise the `webpack --mode production` production build script. This creates the distribution directory called **build**.
+Use `npm run prod` to initialise the `cross-env NODE_ENV=production webpack --progress --hide-modules` production build script. This creates the distribution directory called **build**.
 
 ***
 

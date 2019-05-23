@@ -28,10 +28,10 @@
       </div>
       <div class="columns landing-buttons">
         <div class="column col-6 col-xs-6">
-          <router-link tag="button" class="btn btn-primary btn-sm float-left" to="/add-expense"><i class="icon icon-plus"></i> Add new expense</router-link>
+          <router-link tag="button" class="btn btn-primary btn-sm float-left" to="./add-expense"><i class="icon icon-plus"></i> Add new expense</router-link>
         </div>
         <div class="column col-6 col-xs-6">
-          <router-link tag="button" class="btn btn-primary btn-sm float-right" to="/add-income"><i class="icon icon-plus"></i> Add new income</router-link>
+          <router-link tag="button" class="btn btn-primary btn-sm float-right" to="./add-income"><i class="icon icon-plus"></i> Add new income</router-link>
         </div>
       </div>
       <div v-if="toastStatus" class="columns landing-buttons">
@@ -45,7 +45,7 @@
       <div class="columns">
         <div class="column col-sm-12 landing-tabs">
           <ul class="tab tab-block">
-            <router-link tag="li" v-for="tab in tabs" :key="tab" :class="['tab-item', { active: currentTab === tab }]" v-on:click="currentTab = tab" :to="`/${tab}`" ><a v-on:click.prevent href="#">{{ tab }}</a></router-link>
+            <router-link tag="li" v-for="tab in tabs" :key="tab" :class="['tab-item', { active: currentTab === tab }]" v-on:click="currentTab = tab" :to="`./${tab}`" ><a v-on:click.prevent href="#">{{ tab }}</a></router-link>
           </ul>
         </div>
       </div>
