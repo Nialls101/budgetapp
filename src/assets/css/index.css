@@ -9,7 +9,7 @@ body {
   max-width: 360px;
   background: #fff;
 }
-#expenses {
+#expenses, #addExpense {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
