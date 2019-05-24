@@ -39,20 +39,20 @@ export default {
               },
           ],
           items: [
-            {id: '1', title: 'Expense 1', amount: 50.00, type: 'expense', fixedCost: true},
-            {id: '2', title: 'Expense 2', amount: 50.00, type: 'expense', fixedCost: false},
-            {id: '3', title: 'Expense 3', amount: 50.00, type: 'expense', fixedCost: true},
-            {id: '4', title: 'Expense 4', amount: 100.00, type: 'expense', fixedCost: true},
-            {id: '5', title: 'Expense 5', amount: 50.00, type: 'expense', fixedCost: false},
+            {id: 0, title: 'Expense 1', amount: 50.00, type: 'expense', fixedCost: true},
+            {id: 1, title: 'Expense 2', amount: 50.00, type: 'expense', fixedCost: false},
+            {id: 2, title: 'Expense 3', amount: 50.00, type: 'expense', fixedCost: true},
+            {id: 3, title: 'Expense 4', amount: 100.00, type: 'expense', fixedCost: true},
+            {id: 4, title: 'Expense 5', amount: 50.00, type: 'expense', fixedCost: false},
 
-            {id: '6', title: 'Income 1', amount: 50.00, type: 'income', fixedCost: false},
-            {id: '7', title: 'Income 2', amount: 50.00, type: 'income', fixedCost: false},
-            {id: '8', title: 'Income 3', amount: 50.00, type: 'income', fixedCost: false},
-            {id: '9', title: 'Income 4', amount: 100.00, type: 'income', fixedCost: false},
+            {id: 5, title: 'Income 1', amount: 50.00, type: 'income', fixedCost: false},
+            {id: 6, title: 'Income 2', amount: 50.00, type: 'income', fixedCost: false},
+            {id: 7, title: 'Income 3', amount: 50.00, type: 'income', fixedCost: false},
+            {id: 8, title: 'Income 4', amount: 100.00, type: 'income', fixedCost: false},
 
-            {id: '11', title: 'Savings 1', amount: 5.00, type: 'savings', fixedCost: false},
-            {id: '12', title: 'Savings 2', amount: 10.00, type: 'savings', fixedCost: false},
-            {id: '13', title: 'Savings 3', amount: 50.00, type: 'savings', fixedCost: false}
+            {id: 9, title: 'Savings 1', amount: 5.00, type: 'savings', fixedCost: false},
+            {id: 10, title: 'Savings 2', amount: 10.00, type: 'savings', fixedCost: false},
+            {id: 11, title: 'Savings 3', amount: 50.00, type: 'savings', fixedCost: false}
           ],
           barExpenses: '65',
           barSavings: '25',

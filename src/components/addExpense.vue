@@ -11,21 +11,21 @@
             <div class="column col-12 col-xs-12 add-expense--row">
               <div class="form-group">
                 <label class="form-label" for="input-expense-name">Name</label>
-                <input class="form-input" type="text" id="input-expense-name" placeholder="Name" required>
+                <input class="form-input" type="text" id="input-expense-name" placeholder="Name" required v-model="expenses.title" >
               </div>
               <div class="form-group">
                 <label class="form-label" for="input-expense-amount">Amount</label>
-                <input class="form-input" type="number" min="0" id="input-expense-amount" placeholder="Amount" required>
+                <input class="form-input" type="number" v-model.number="expenses.amount" min="0" id="input-expense-amount" placeholder="Amount" required>
               </div>
               <div class="form-group">
                 <label class="form-switch">
-                  <input type="checkbox" id="input-expense-fc" value="input-expense-fc">
+                  <input type="checkbox" id="input-expense-fc" v-model="expenses.isFixedCost">
                   <i class="form-icon"></i> Is this a fixed cost?
                 </label>
               </div>
             </div>
             <div class="column col-12 col-xs-12 add-expense--row">
-              <button type="submit" class="btn btn-primary">Add Expense</button>
+              <button v-on:click.prevent="addExpense" type="button" class="btn btn-primary">Add Expense</button>
             </div>
           </form>
         </div>
@@ -90,10 +90,10 @@ export default {
     },
     // Adds an expense to the existing events array
     addExpense: function() {
-      if(this.expense.name) {
-        this.items.push(this.expense);
-        this.expense = { title: '', amount: '', expense: true, fixedCost: false };
-      }
+      this.items.push(this.expenses);
+      this.expenses = { id: this.items.id++, title: this.expenses.title, amount: this.expenses.amount , type: 'expense', fixedCost: this.expenses.isFixedCost };
+      console.log(this.expenses);
+      console.log(this.items);
     }
   },
   computed: {

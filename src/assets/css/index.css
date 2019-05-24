@@ -60,7 +60,7 @@ pre {
 }
 
 .list {
-  max-height: 100vh;
+  /* max-height: 100vh; */
   margin: 0 auto;
   padding: 0;
   overflow: visible;
