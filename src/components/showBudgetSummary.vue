@@ -22,7 +22,7 @@
         </div>
         <div class="column col-6 col-xs-6">
           <div class="form-group">
-            <input class="form-input" id="input-month-year" type="month" value="2019-05">
+            <input class="form-input" id="input-month-year" type="month" v-model="currentDate">
           </div>
         </div>
       </div>
@@ -88,11 +88,7 @@ export default {
         type: String,
         required: true
       },
-      totalsVal: {
-        type: String,
-        required: true
-      },
-      totalsLabel: {
+      currentDate: {
         type: String,
         required: true
       }

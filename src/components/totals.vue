@@ -2,8 +2,8 @@
     <div id="totals">
       <div v-if="totalCostsStatus" id="totalExpenses" class="columns">
         <div class="column col-12 col-xs-12 totals-row">
-          <span class="list-item--title">Total {{ totalsLabel }}</span>
-          <span class="list-item--amount">R {{ totalAmounts(totalsVal) }}</span>
+          <span class="list-item--title">Total&nbsp;<span v-if="totalsLabel === 'Expenses'">Expenses</span><span v-else-if="totalsLabel === 'Income'">Income</span><span v-else-if="totalsLabel === 'Savings'">Savings</span></span>
+          <span class="list-item--amount">R <span v-if="totalsType === 'expense'">{{ totalExpenseAmount }}</span><span v-else-if="totalsType === 'income'">{{ totalIncomeAmount }}</span><span v-else-if="totalsType === 'savings'">{{ totalSavingsAmount }}</span></span>
         </div>
       </div>
       <div v-if="fixedCostsStatus" id="fixedCosts" class="columns">
@@ -23,10 +23,6 @@ export default {
         type: Array,
         required: true
       },
-      totalsVal: {
-        type: String,
-        required: true
-      },
       totalsLabel: {
         type: String,
         required: true
@@ -37,6 +33,10 @@ export default {
       },
       totalCostsStatus: {
         type: Boolean,
+        required: true
+      },
+      totalsType: {
+        type: String,
         required: true
       }
     },
@@ -51,15 +51,15 @@ export default {
       const number = +val.replace(/[^\d.,]/g, '');
       return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
     },
-    totalAmounts: function(val) {
-      let sum = 0;
-      this.items.filter(item => item.type == val)
-      .forEach(item => {
-        sum += parseFloat(item.amount);
-        });
-
-      return sum;
-    }
+    // totalAmounts: function(val) {
+    //   let sum = 0;
+    //   this.items.filter(item => item.type == val)
+    //   .forEach(item => {
+    //     sum += parseFloat(item.amount);
+    //     });
+    //
+    //   return sum;
+    // }
   },
   computed: {
     totalExpensesCount() {
@@ -71,6 +71,33 @@ export default {
     fixedCosts() {
       let sum = 0;
       this.items.filter(item => item.fixedCost == true)
+      .forEach(item => {
+        sum += parseFloat(item.amount);
+      });
+
+      return sum;
+    },
+    totalExpenseAmount() {
+      let sum = 0;
+      this.items.filter(item => item.type == 'expense')
+      .forEach(item => {
+        sum += parseFloat(item.amount);
+      });
+
+      return sum;
+    },
+    totalIncomeAmount() {
+      let sum = 0;
+      this.items.filter(item => item.type == 'income')
+      .forEach(item => {
+        sum += parseFloat(item.amount);
+      });
+
+      return sum;
+    },
+    totalSavingsAmount() {
+      let sum = 0;
+      this.items.filter(item => item.type == 'savings')
       .forEach(item => {
         sum += parseFloat(item.amount);
       });
