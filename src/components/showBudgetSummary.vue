@@ -28,13 +28,13 @@
       </div>
       <div class="columns landing-buttons">
         <div class="column col-4 col-xs-4">
-          <router-link tag="button" class="btn btn-primary btn-sm float-left" to="./add-expense"><i class="icon icon-plus"></i> Add expense</router-link>
+          <router-link tag="button" class="btn btn-primary btn-sm float-left" to="./add-expense"><i class="icon icon-plus"></i> Add <span class="hide-xs">new</span> expense</router-link>
         </div>
         <div class="column col-4 col-xs-4">
-          <router-link tag="button" class="btn btn-primary btn-sm float-left" to="./add-income"><i class="icon icon-plus"></i> Add income</router-link>
+          <router-link tag="button" class="btn btn-primary btn-sm p-centered" to="./add-income"><i class="icon icon-plus"></i> Add <span class="hide-xs">new</span> income</router-link>
         </div>
         <div class="column col-4 col-xs-4">
-          <router-link tag="button" class="btn btn-primary btn-sm float-right" to="./add-savings"><i class="icon icon-plus"></i> Add savings</router-link>
+          <router-link tag="button" class="btn btn-primary btn-sm float-right" to="./add-savings"><i class="icon icon-plus"></i> Add <span class="hide-xs">new</span> savings</router-link>
         </div>
       </div>
       <div v-if="toastStatus" class="columns landing-buttons">
@@ -122,7 +122,8 @@ export default {
 <style scoped>
 #landing{
   width: 100%;
-  max-width: 360px;
+  min-width: 359px;
+  max-width: 580px;
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
   background: #f3f3f3;

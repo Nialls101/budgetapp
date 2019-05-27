@@ -18,7 +18,7 @@
                 <input class="form-input" type="number" v-model.number="savings.amount" min="0" id="input-savings-amount" placeholder="Amount" required>
               </div>
             </div>
-            <div class="column col-12 col-xs-12 add-savings--row">
+            <div class="column col-12 col-xs-12 add-savings--row mt-2">
               <button v-on:click.prevent="addSavings" type="button" class="btn btn-primary">Add Savings</button>
             </div>
           </form>
@@ -107,7 +107,8 @@ export default {
 <style scoped>
 #addSavings {
   width: 100%;
-  max-width: 360px;
+  min-width: 359px;
+  max-width: 580px;
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
   background: #fff;

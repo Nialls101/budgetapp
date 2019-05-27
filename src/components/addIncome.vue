@@ -18,7 +18,7 @@
                 <input class="form-input" type="number" v-model.number="income.amount" min="0" id="input-income-amount" placeholder="Amount" required>
               </div>
             </div>
-            <div class="column col-12 col-xs-12 add-income--row">
+            <div class="column col-12 col-xs-12 add-income--row mt-2">
               <button v-on:click.prevent="addIncome" type="button" class="btn btn-primary">Add Income</button>
             </div>
           </form>
@@ -107,7 +107,8 @@ export default {
 <style scoped>
 #addIncome {
   width: 100%;
-  max-width: 360px;
+  min-width: 359px;
+  max-width: 580px;
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
   background: #fff;

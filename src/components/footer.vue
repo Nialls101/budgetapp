@@ -22,7 +22,8 @@ export default {
 footer{
     background: #2a5398;
     padding: 10px;
-    max-width: 360px;
+    min-width: 359px;
+    max-width: 580px;
     margin: auto;
     font-size: .7rem;
     color: #d9e0ed;

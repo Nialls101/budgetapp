@@ -12,6 +12,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({
     routes: Routes,
     mode: 'history',
+    base: process.env.BASE_URL,
     linkActiveClass: "active",
     linkExactActiveClass: "exact-active",
 });

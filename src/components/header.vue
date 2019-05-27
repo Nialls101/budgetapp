@@ -52,7 +52,8 @@ export default {
 header{
     background: #3161b4;
     padding: 10px;
-    max-width: 360px;
+    min-width: 359px;
+    max-width: 580px;
     margin: auto;
 }
 h1{

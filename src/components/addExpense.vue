@@ -119,7 +119,8 @@ export default {
 <style scoped>
 #addExpense {
   width: 100%;
-  max-width: 360px;
+  min-width: 359px;
+  max-width: 580px;
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
   background: #fff;

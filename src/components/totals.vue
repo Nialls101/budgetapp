@@ -114,7 +114,8 @@ li {
 
 #totalExpenses {
   width: 100%;
-  max-width: 360px;
+  min-width: 359px;
+  max-width: 580px;
   margin: 0 auto;
   background: #fff;
   box-sizing: border-box;
@@ -122,7 +123,8 @@ li {
 }
 #fixedCosts {
   width: 100%;
-  max-width: 360px;
+  min-width: 359px;
+  max-width: 580px;
   margin: 0 auto;
   background: #fff;
   box-sizing: border-box;
