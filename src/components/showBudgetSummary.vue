@@ -27,11 +27,14 @@
         </div>
       </div>
       <div class="columns landing-buttons">
-        <div class="column col-6 col-xs-6">
-          <router-link tag="button" class="btn btn-primary btn-sm float-left" to="./add-expense"><i class="icon icon-plus"></i> Add new expense</router-link>
+        <div class="column col-4 col-xs-4">
+          <router-link tag="button" class="btn btn-primary btn-sm float-left" to="./add-expense"><i class="icon icon-plus"></i> Add expense</router-link>
         </div>
-        <div class="column col-6 col-xs-6">
-          <router-link tag="button" class="btn btn-primary btn-sm float-right" to="./add-income"><i class="icon icon-plus"></i> Add new income</router-link>
+        <div class="column col-4 col-xs-4">
+          <router-link tag="button" class="btn btn-primary btn-sm float-left" to="./add-income"><i class="icon icon-plus"></i> Add income</router-link>
+        </div>
+        <div class="column col-4 col-xs-4">
+          <router-link tag="button" class="btn btn-primary btn-sm float-right" to="./add-savings"><i class="icon icon-plus"></i> Add savings</router-link>
         </div>
       </div>
       <div v-if="toastStatus" class="columns landing-buttons">
