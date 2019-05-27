@@ -130,9 +130,11 @@ li {
   box-sizing: border-box;
 }
 #totalExpenses .list-item--title {
+  width: calc(100% - 153px);
   padding-left: 46px;
 }
 #fixedCosts .list-item--title {
+  width: calc(100% - 153px);
   padding-left: 46px;
 }
 </style>

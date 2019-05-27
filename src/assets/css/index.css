@@ -98,19 +98,20 @@ pre {
 }
 
 .list-item--title {
-  width: 56%;
+  width: calc(100% - 145px);
   display: inline-flex;
   padding-right: 10px;
 }
 
 .list-item--amount {
-  width: 26%;
+  width: 85px;
   display: inline-flex;
 }
 
 .list-item--actions {
-  width: 18%;
+  width: 60px;
   display: inline-flex;
+  align-self: flex-end;
 }
 
 .list-item--actions .icon {
