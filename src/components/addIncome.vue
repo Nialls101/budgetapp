@@ -1,31 +1,25 @@
 <template>
-    <div id="addExpense">
+    <div id="addIncome">
       <div class="container">
         <div class="columns">
-          <div class="column col-12 col-xs-12 add-expense--heading">
-            <h5>Add expense</h5>
+          <div class="column col-12 col-xs-12 add-income--heading">
+            <h5>Add income</h5>
           </div>
         </div>
         <div class="columns">
           <form>
-            <div class="column col-12 col-xs-12 add-expense--row">
+            <div class="column col-12 col-xs-12 add-income--row">
               <div class="form-group">
-                <label class="form-label" for="input-expense-name">Name</label>
-                <input class="form-input" type="text" id="input-expense-name" placeholder="Name" required v-model="expenses.title" >
+                <label class="form-label" for="input-income-name">Name</label>
+                <input class="form-input" type="text" id="input-income-name" placeholder="Name" required v-model="income.title" >
               </div>
               <div class="form-group">
-                <label class="form-label" for="input-expense-amount">Amount</label>
-                <input class="form-input" type="number" v-model.number="expenses.amount" min="0" id="input-expense-amount" placeholder="Amount" required>
-              </div>
-              <div class="form-group">
-                <label class="form-switch">
-                  <input type="checkbox" id="input-expense-fc" v-model="expenses.isFixedCost">
-                  <i class="form-icon"></i> Is this a fixed cost?
-                </label>
+                <label class="form-label" for="input-income-amount">Amount</label>
+                <input class="form-input" type="number" v-model.number="income.amount" min="0" id="input-income-amount" placeholder="Amount" required>
               </div>
             </div>
-            <div class="column col-12 col-xs-12 add-expense--row">
-              <button v-on:click.prevent="addExpense" type="button" class="btn btn-primary">Add Expense</button>
+            <div class="column col-12 col-xs-12 add-income--row">
+              <button v-on:click.prevent="addIncome" type="button" class="btn btn-primary">Add Income</button>
             </div>
           </form>
         </div>
@@ -70,9 +64,9 @@ export default {
         newExpenseTitle: '',
         newExpenseAmount: '',
         newExpenseFixedCost: Boolean,
-        totalsVal: 'expense',
-        totalsLabel: 'Expenses',
-        expenses: []
+        totalsVal: 'income',
+        totalsLabel: 'Income',
+        income: []
       };
     },
     methods: {
@@ -89,11 +83,11 @@ export default {
       }
     },
     // Adds an expense to the existing events array
-    addExpense: function() {
-      this.items.push(this.expenses);
-      this.expenses = { id: this.items.id++, title: this.expenses.title, amount: this.expenses.amount , type: 'expense', fixedCost: this.expenses.isFixedCost };
-      // console.log(this.expenses);
-      // console.log(this.items);
+    addIncome: function() {
+      this.items.push(this.income);
+      this.income = { id: this.items.id++, title: this.income.title, amount: this.income.amount , type: 'income' };
+      console.log(this.income);
+      console.log(this.items);
     }
   },
   computed: {
@@ -106,18 +100,12 @@ export default {
     },
     totalFixedCostsCount() {
       return this.items.reduce((acc, item) => acc + item.fixedCost, 0);
-    },
-    fixedCosts() {
-      let sum = 0;
-      this.items.filter(item => item.fixedCost == true)
-      .forEach(item => sum += parseFloat(item.amount));
-      return sum;
     }
   }
 }
 </script>
 <style scoped>
-#addExpense {
+#addIncome {
   width: 100%;
   max-width: 360px;
   margin: 0 auto;
@@ -125,10 +113,10 @@ export default {
   background: #fff;
   box-sizing: border-box;
 }
-.add-expense--heading {
+.add-income--heading {
   padding: 0px 15px 5px 15px;
 }
-.add-expense--row {
+.add-income--row {
   padding: 0px 15px 5px 15px;
 }
 h5 {
