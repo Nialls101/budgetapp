@@ -123,7 +123,7 @@ export default {
 #landing{
   width: 100%;
   min-width: 359px;
-  max-width: 580px;
+  max-width: 479px;
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
   background: #f3f3f3;

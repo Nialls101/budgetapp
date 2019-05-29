@@ -6,6 +6,9 @@
     </div>
 </template>
 <script>
+let totalsLabel = 'Expenses';
+let totalsType = 'expense';
+
 import {ContainerMixin, ElementMixin} from 'vue-slicksort';
 
 const SortableList = {
@@ -71,8 +74,6 @@ export default {
         newExpenseTitle: '',
         newExpenseAmount: '',
         newExpenseFixedCost: Boolean,
-        totalsVal: 'expense',
-        totalsLabel: 'Expenses',
         expenses: []
       };
     },
@@ -87,13 +88,6 @@ export default {
       } else {
         let found = this.items.indexOf(item)
         this.items.splice(found, 1)
-      }
-    },
-    // Adds an expense to the existing events array
-    addExpense: function() {
-      if(this.expense.name) {
-        this.items.push(this.expense);
-        this.expense = { title: '', amount: '', expense: true, fixedCost: false };
       }
     }
   },

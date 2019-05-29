@@ -84,10 +84,13 @@ export default {
     },
     // Adds an expense to the existing events array
     addSavings: function() {
+      var savings = [];
+      let items_id = this.items;
+      let new_savings_id = items_id.length;
+      this.savings = { id: new_savings_id, title: this.savings.title, amount: this.savings.amount , type: 'savings' };
       this.items.push(this.savings);
-      this.savings = { id: this.items.id++, title: this.savings.title, amount: this.savings.amount , type: 'savings' };
-      console.log(this.savings);
-      console.log(this.items);
+      // console.log(this.savings);
+      // console.log(this.items);
     }
   },
   computed: {
@@ -108,7 +111,7 @@ export default {
 #addSavings {
   width: 100%;
   min-width: 359px;
-  max-width: 580px;
+  max-width: 479px;
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
   background: #fff;

@@ -84,10 +84,13 @@ export default {
     },
     // Adds an expense to the existing events array
     addIncome: function() {
+      var income = [];
+      let items_id = this.items;
+      let new_income_id = items_id.length;
+      this.income = { id: new_income_id, title: this.income.title, amount: this.income.amount , type: 'income' };
       this.items.push(this.income);
-      this.income = { id: this.items.id++, title: this.income.title, amount: this.income.amount , type: 'income' };
-      console.log(this.income);
-      console.log(this.items);
+      // console.log(this.income);
+      // console.log(this.items);
     }
   },
   computed: {
@@ -108,7 +111,7 @@ export default {
 #addIncome {
   width: 100%;
   min-width: 359px;
-  max-width: 580px;
+  max-width: 479px;
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
   background: #fff;

@@ -70,9 +70,7 @@ export default {
         expenseAmount: 0.00,
         newExpenseTitle: '',
         newExpenseAmount: '',
-        newExpenseFixedCost: Boolean,
-        totalsVal: 'savings',
-        totalsLabel: 'Expenses'
+        newExpenseFixedCost: Boolean
       };
     },
     methods: {
@@ -86,13 +84,6 @@ export default {
       } else {
         let found = this.items.indexOf(item)
         this.items.splice(found, 1)
-      }
-    },
-    // Adds an expense to the existing events array
-    addExpense: function() {
-      if(this.expense.name) {
-        this.items.push(this.expense);
-        this.expense = { title: '', amount: '', expense: true, fixedCost: false };
       }
     }
   },

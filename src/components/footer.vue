@@ -23,7 +23,7 @@ footer{
     background: #2a5398;
     padding: 10px;
     min-width: 359px;
-    max-width: 580px;
+    max-width: 479px;
     margin: auto;
     font-size: .7rem;
     color: #d9e0ed;

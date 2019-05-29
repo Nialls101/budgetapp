@@ -53,7 +53,7 @@ header{
     background: #3161b4;
     padding: 10px;
     min-width: 359px;
-    max-width: 580px;
+    max-width: 479px;
     margin: auto;
 }
 h1{

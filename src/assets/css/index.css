@@ -7,7 +7,7 @@ body {
 }
 .app--container {
   min-width: 359px;
-  max-width: 580px;
+  max-width: 479px;
   background: #fff;
 }
 #expenses, #addExpense {
@@ -58,7 +58,7 @@ pre {
 .list, pre {
   width: 100%;
   min-width: 359px;
-  max-width: 580px;
+  max-width: 479px;
 }
 
 .list {

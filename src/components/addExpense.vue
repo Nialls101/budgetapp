@@ -90,8 +90,11 @@ export default {
     },
     // Adds an expense to the existing events array
     addExpense: function() {
+      var expenses = [];
+      let items_id = this.items;
+      let new_expense_id = items_id.length;
+      this.expenses = { id: new_expense_id, title: this.expenses.title, amount: this.expenses.amount , type: 'expense', fixedCost: this.expenses.isFixedCost };
       this.items.push(this.expenses);
-      this.expenses = { id: this.items.id++, title: this.expenses.title, amount: this.expenses.amount , type: 'expense', fixedCost: this.expenses.isFixedCost };
       // console.log(this.expenses);
       // console.log(this.items);
     }
@@ -120,7 +123,7 @@ export default {
 #addExpense {
   width: 100%;
   min-width: 359px;
-  max-width: 580px;
+  max-width: 479px;
   margin: 0 auto;
   padding: 15px 0px 0px 0px;
   background: #fff;
