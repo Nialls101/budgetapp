@@ -42,12 +42,12 @@ $ npm install
 The Webpack scripts are configured in the *webpack.config.js* file.
 
 ```
-npm run dev
+$ npm run dev
 ```
 Use `npm run dev` to initialise the `cross-env NODE_ENV=development webpack-dev-server --open --hot` development script that is setup in the *webpack.config.js* file.
 
 ```
-npm run prod
+$ npm run prod
 ```
 Use `npm run prod` to initialise the `cross-env NODE_ENV=production webpack --progress --hide-modules` production build script. This creates the distribution directory called **build**.
 
