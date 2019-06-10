@@ -1,36 +1,36 @@
 <template>
-    <div id="addExpense">
-      <div class="container">
-        <div class="columns">
-          <div class="column col-12 col-xs-12 add-expense--heading">
-            <h5>Add expense</h5>
-          </div>
-        </div>
-        <div class="columns">
-          <form>
-            <div class="column col-12 col-xs-12 add-expense--row">
-              <div class="form-group">
-                <label class="form-label" for="input-expense-name">Name</label>
-                <input class="form-input" type="text" id="input-expense-name" placeholder="Name" required v-model="expenses.title" >
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="input-expense-amount">Amount</label>
-                <input class="form-input" type="number" v-model.number="expenses.amount" min="0" id="input-expense-amount" placeholder="Amount" required>
-              </div>
-              <div class="form-group">
-                <label class="form-switch">
-                  <input type="checkbox" id="input-expense-fc" v-model="expenses.isFixedCost">
-                  <i class="form-icon"></i> Is this a fixed cost?
-                </label>
-              </div>
-            </div>
-            <div class="column col-12 col-xs-12 add-expense--row">
-              <button v-on:click.prevent="addExpense" type="button" class="btn btn-primary">Add Expense</button>
-            </div>
-          </form>
+  <div id="addExpense">
+    <div class="container">
+      <div class="columns">
+        <div class="column col-12 col-xs-12 add-expense--heading">
+          <h5>Add expense</h5>
         </div>
       </div>
+      <div class="columns">
+        <form>
+          <div class="column col-12 col-xs-12 add-expense--row">
+            <div class="form-group">
+              <label class="form-label" for="input-expense-name">Name</label>
+              <input class="form-input" type="text" id="input-expense-name" placeholder="Name" required v-model="expenses.title" >
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="input-expense-amount">Amount</label>
+              <input class="form-input" type="number" v-model.number="expenses.amount" min="0" id="input-expense-amount" placeholder="Amount" required>
+            </div>
+            <div class="form-group">
+              <label class="form-switch">
+                <input type="checkbox" id="input-expense-fc" v-model="expenses.isFixedCost">
+                <i class="form-icon"></i> Is this a fixed cost?
+              </label>
+            </div>
+          </div>
+          <div class="column col-12 col-xs-12 add-expense--row">
+            <button v-on:click.prevent="addExpense" type="button" class="btn btn-primary">Add Expense</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </template>
 <script>
 export default {
