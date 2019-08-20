@@ -87,7 +87,12 @@ export default {
       var savings = [];
       let items_id = this.items;
       let new_savings_id = items_id.length;
-      this.savings = { id: new_savings_id, title: this.savings.title, amount: this.savings.amount , type: 'savings' };
+      this.savings = { 
+        id: new_savings_id, 
+        title: this.savings.title, 
+        amount: this.savings.amount , 
+        type: 'savings' 
+      };
       this.items.push(this.savings);
       // console.log(this.savings);
       // console.log(this.items);

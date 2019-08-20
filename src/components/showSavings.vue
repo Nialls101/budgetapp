@@ -1,7 +1,15 @@
 <template>
     <div id="showIncome">
       <SortableList lockAxis="y" v-model="items">
-        <SortableItem v-for="(item, index) in items" v-if="item.type == 'savings'" :index="index" :key="index" :item="item.title" :amount="item.amount" :fixedCost="item.fixedCost" v-on:remove="items.splice(index, 1)"/>
+        <SortableItem 
+          v-for="(item, index) in items" 
+          v-if="item.type == 'savings'" 
+          :index="index" 
+          :key="index" 
+          :item="item.title" 
+          :amount="item.amount" 
+          :fixedCost="item.fixedCost" 
+          v-on:remove="items.splice(index, 1)"/>
       </SortableList>
     </div>
 </template>

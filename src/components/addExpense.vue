@@ -93,7 +93,13 @@ export default {
       var expenses = [];
       let items_id = this.items;
       let new_expense_id = items_id.length;
-      this.expenses = { id: new_expense_id, title: this.expenses.title, amount: this.expenses.amount , type: 'expense', fixedCost: this.expenses.isFixedCost };
+      this.expenses = { 
+        id: new_expense_id, 
+        title: this.expenses.title, 
+        amount: this.expenses.amount ,
+        type: 'expense', 
+        fixedCost: this.expenses.isFixedCost 
+      };
       this.items.push(this.expenses);
       // console.log(this.expenses);
       // console.log(this.items);

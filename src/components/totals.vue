@@ -2,8 +2,16 @@
     <div id="totals">
       <div v-if="totalCostsStatus" id="totalExpenses" class="columns">
         <div class="column col-12 col-xs-12 totals-row">
-          <span class="list-item--title">Total&nbsp;<span v-if="totalsLabel === 'Expenses'">Expenses</span><span v-else-if="totalsLabel === 'Income'">Income</span><span v-else-if="totalsLabel === 'Savings'">Savings</span></span>
-          <span class="list-item--amount">R <span v-if="totalsType === 'expense'">{{ totalExpenseAmount }}</span><span v-else-if="totalsType === 'income'">{{ totalIncomeAmount }}</span><span v-else-if="totalsType === 'savings'">{{ totalSavingsAmount }}</span></span>
+          <span class="list-item--title">Total&nbsp;
+            <span v-if="totalsLabel === 'Expenses'">Expenses</span>
+            <span v-else-if="totalsLabel === 'Income'">Income</span>
+            <span v-else-if="totalsLabel === 'Savings'">Savings</span>
+          </span>
+          <span class="list-item--amount">R 
+            <span v-if="totalsType === 'expense'">{{ totalExpenseAmount }}</span>
+            <span v-else-if="totalsType === 'income'">{{ totalIncomeAmount }}</span>
+            <span v-else-if="totalsType === 'savings'">{{ totalSavingsAmount }}</span>
+          </span>
         </div>
       </div>
       <div v-if="fixedCostsStatus" id="fixedCosts" class="columns">

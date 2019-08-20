@@ -1,9 +1,26 @@
 <template>
     <div>
         <app-header :title="title"></app-header>
-        <app-landing :items="items" :toastStatus="toastStatus" :toastMessage="toastMessage" :toastSuccess="toastSuccess" :toastWarning="toastWarning" :toastError="toastError" :barExpenses="barExpenses" :barSavings="barSavings" :barDisposableIncome="barDisposableIncome" :currentDate="currentDate" ></app-landing>
+        <app-landing 
+          :items="items" 
+          :toastStatus="toastStatus" 
+          :toastMessage="toastMessage" 
+          :toastSuccess="toastSuccess" 
+          :toastWarning="toastWarning" 
+          :toastError="toastError" 
+          :barExpenses="barExpenses" 
+          :barSavings="barSavings" 
+          :barDisposableIncome="barDisposableIncome" 
+          :currentMonth="currentMonth" >
+        </app-landing>
         <router-view :items="items"></router-view>
-        <app-totals :items="items" :fixedCostsStatus="fixedCostsStatus" :totalCostsStatus="totalCostsStatus" :totalsType="totalsType" :totalsLabel="totalsLabel"></app-totals>
+        <app-totals 
+          :items="items" 
+          :fixedCostsStatus="fixedCostsStatus" 
+          :totalCostsStatus="totalCostsStatus" 
+          :totalsType="totalsType" 
+          :totalsLabel="totalsLabel">
+        </app-totals>
         <app-footer :title="title"></app-footer>
     </div>
 </template>
@@ -57,7 +74,7 @@ export default {
           barExpenses: '65',
           barSavings: '25',
           barDisposableIncome: '10',
-          currentDate: new Date().toISOString().slice(0,7),
+          currentMonth: new Date().getMonth().toString(),
           title: 'OnBudget',
           subtitle: ' - Budget and expenses calculator',
           toastStatus: false,
@@ -79,6 +96,3 @@ export default {
 }
 
 </script>
-
-<style>
-</style>

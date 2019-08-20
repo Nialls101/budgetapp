@@ -87,7 +87,12 @@ export default {
       var income = [];
       let items_id = this.items;
       let new_income_id = items_id.length;
-      this.income = { id: new_income_id, title: this.income.title, amount: this.income.amount , type: 'income' };
+      this.income = { 
+        id: new_income_id, 
+        title: this.income.title, 
+        amount: this.income.amount , 
+        type: 'income' 
+      };
       this.items.push(this.income);
       // console.log(this.income);
       // console.log(this.items);
