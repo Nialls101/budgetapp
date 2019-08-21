@@ -25,49 +25,50 @@
 <script>
 
 export default {
-    props: {
-      amount: Number,
-      items: {
-        type: Array,
-        required: true
-      },
-      totalsLabel: {
-        type: String,
-        required: true
-      },
-      fixedCostsStatus: {
-        type: Boolean,
-        required: true
-      },
-      totalCostsStatus: {
-        type: Boolean,
-        required: true
-      },
-      totalsType: {
-        type: String,
-        required: true
-      }
+  name: "app-totals",
+  props: {
+    amount: Number,
+    items: {
+      type: Array,
+      required: true
     },
-    components: {
+    totalsLabel: {
+      type: String,
+      required: true
     },
-    data() {
-      return {
-      };
+    fixedCostsStatus: {
+      type: Boolean,
+      required: true
     },
-    methods: {
-      addDecimals: function (val, oldVal) {
-      const number = +val.replace(/[^\d.,]/g, '');
-      return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
+    totalCostsStatus: {
+      type: Boolean,
+      required: true
     },
-    // totalAmounts: function(val) {
-    //   let sum = 0;
-    //   this.items.filter(item => item.type == val)
-    //   .forEach(item => {
-    //     sum += parseFloat(item.amount);
-    //     });
-    //
-    //   return sum;
-    // }
+    totalsType: {
+      type: String,
+      required: true
+    }
+  },
+  components: {
+  },
+  data() {
+    return {
+    };
+  },
+  methods: {
+    addDecimals: function (val, oldVal) {
+    const number = +val.replace(/[^\d.,]/g, '');
+    return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
+  },
+  // totalAmounts: function(val) {
+  //   let sum = 0;
+  //   this.items.filter(item => item.type == val)
+  //   .forEach(item => {
+  //     sum += parseFloat(item.amount);
+  //     });
+  //
+  //   return sum;
+  // }
   },
   computed: {
     totalExpensesCount() {

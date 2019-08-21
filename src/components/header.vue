@@ -29,40 +29,41 @@
 </template>
 <script>
 export default {
-    props: {
-      title: {
-        type: String,
-        required: true
-      }
-    },
-    data(){
-        return{
-          inBudget: true,
-          overBudget: false,
-          inBudgetIcon: true,
-          overBudgetIcon: false
-        }
-    },
-    methods: {
-
+  name: "app-header",
+  props: {
+    title: {
+    type: String,
+    required: true
     }
+  },
+  data(){
+    return{
+      inBudget: true,
+      overBudget: false,
+      inBudgetIcon: true,
+      overBudgetIcon: false
+    }
+  },
+  methods: {
+
+  }
 }
 </script>
 <style scoped>
 header{
-    background: #3161b4;
-    padding: 10px;
-    min-width: 359px;
-    max-width: 479px;
-    margin: auto;
+  background: #3161b4;
+  padding: 10px;
+  min-width: 359px;
+  max-width: 479px;
+  margin: auto;
 }
 h1{
-    color: #fff;
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 0;
-    margin-top: 0.23em;
-    text-shadow: 1px 2px #25519d
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0.23em;
+  text-shadow: 1px 2px #25519d
 }
 .active {
   color: #fff;

@@ -5,17 +5,18 @@
 </template>
 <script>
 export default {
-    props: {
-      title: {
-        type: String,
-        required: true
-      }
-    },
-    data(){
-        return{
-
-        }
+  name: "app-footer",
+  props: {
+    title: {
+      type: String,
+      required: true
     }
+  },
+  data(){
+    return{
+
+    };
+  }
 }
 </script>
 <style scoped>

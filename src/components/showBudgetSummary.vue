@@ -111,65 +111,66 @@
 </template>
 <script>
 export default {
-    props: {
-      toastStatus: {
-        type: Boolean,
-        required: true
-      },
-      toastMessage: {
-        type: String,
-        required: true
-      },
-      toastSuccess: {
-        type: Boolean,
-        required: false
-      },
-      toastWarning: {
-        type: Boolean,
-        required: false
-      },
-      toastError: {
-        type: Boolean,
-        required: false
-      },
-      barExpenses: {
-        type: String,
-        required: true
-      },
-      barSavings: {
-        type: String,
-        required: true
-      },
-      barDisposableIncome: {
-        type: String,
-        required: true
-      },
-      currentMonth: {
-        type: String,
-        required: true
-      }
+  name: "show-budget-summary",
+  props: {
+    toastStatus: {
+      type: Boolean,
+      required: true
     },
-    data(){
-        return{
-          expensesBadgeShow: false,
-          expensesBadgeTotal: 0,
-
-          expenseAmount: 0.00,
-          newExpenseTitle: '',
-          newExpenseAmount: '',
-          newExpenseFixedCost: Boolean,
-
-          currentTab: '',
-          tabs: ['expenses', 'income', 'savings']
-        }
+    toastMessage: {
+      type: String,
+      required: true
     },
-    methods: {
+    toastSuccess: {
+      type: Boolean,
+      required: false
     },
-    computed: {
-      currentTabComponent() {
-        return 'show' + this.currentTab
-      }
+    toastWarning: {
+      type: Boolean,
+      required: false
+    },
+    toastError: {
+      type: Boolean,
+      required: false
+    },
+    barExpenses: {
+      type: String,
+      required: true
+    },
+    barSavings: {
+      type: String,
+      required: true
+    },
+    barDisposableIncome: {
+      type: String,
+      required: true
+    },
+    currentMonth: {
+      type: String,
+      required: true
     }
+  },
+  data(){
+    return{
+      expensesBadgeShow: false,
+      expensesBadgeTotal: 0,
+
+      expenseAmount: 0.00,
+      newExpenseTitle: '',
+      newExpenseAmount: '',
+      newExpenseFixedCost: Boolean,
+
+      currentTab: '',
+      tabs: ['expenses', 'income', 'savings']
+    }
+  },
+  methods: {
+  },
+  computed: {
+    currentTabComponent() {
+      return 'show' + this.currentTab;
+    }
+  }
 }
 </script>
 <style scoped>

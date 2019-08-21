@@ -52,6 +52,7 @@ const SortableItem = {
 };
 
 export default {
+  name: "show-expenses",
     props: {
       amount: Number,
       items: {

@@ -28,55 +28,56 @@
 </template>
 <script>
 export default {
-    props: {
-      amount: Number,
-      items: {
-        type: Array,
-        required: true
-      },
-      totalCostsStatus: {
-        type: Boolean,
-        required: true
-      },
-      fixedCostsStatus: {
-        type: Boolean,
-        required: true
-      }
+  name: "add-savings",
+  props: {
+    amount: Number,
+    items: {
+      type: Array,
+      required: true
     },
-    components: {
+    totalCostsStatus: {
+      type: Boolean,
+      required: true
     },
-    data() {
-      return {
-        barExpenses: '65',
-        barSavings: '25',
-        barDisposableIncome: '10',
+    fixedCostsStatus: {
+      type: Boolean,
+      required: true
+    }
+  },
+  components: {
+  },
+  data() {
+    return {
+      barExpenses: '65',
+      barSavings: '25',
+      barDisposableIncome: '10',
 
-        toastStatus: false,
-        toastSuccess: false,
-        toastWarning: false,
-        toastError: false,
-        toastMessage: "Default text",
+      toastStatus: false,
+      toastSuccess: false,
+      toastWarning: false,
+      toastError: false,
+      toastMessage: "Default text",
 
-        expensesBadgeShow: false,
-        expensesBadgeTotal: 0,
+      expensesBadgeShow: false,
+      expensesBadgeTotal: 0,
 
-        expenseAmount: 0.00,
-        newExpenseTitle: '',
-        newExpenseAmount: '',
-        newExpenseFixedCost: Boolean,
-        totalsVal: 'income',
-        totalsLabel: 'Income',
-        savings: []
-      };
-    },
-    methods: {
-      addDecimals: function (val, oldVal) {
+      expenseAmount: 0.00,
+      newExpenseTitle: '',
+      newExpenseAmount: '',
+      newExpenseFixedCost: Boolean,
+      totalsVal: 'income',
+      totalsLabel: 'Income',
+      savings: []
+    };
+  },
+  methods: {
+    addDecimals: function (val, oldVal) {
       const number = +val.replace(/[^\d.,]/g, '');
-      return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
+      return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2);
     },
     deleteItem: function (item, index) {
       if(this.items[index] === item) {
-        this.items.splice(index, 1)
+      this.items.splice(index, 1)
       } else {
         let found = this.items.indexOf(item)
         this.items.splice(found, 1)
@@ -90,7 +91,7 @@ export default {
       this.savings = { 
         id: new_savings_id, 
         title: this.savings.title, 
-        amount: this.savings.amount , 
+        amount: this.savings.amount, 
         type: 'savings' 
       };
       this.items.push(this.savings);

@@ -52,27 +52,28 @@ const SortableItem = {
 };
 
 export default {
-    props: {
-      amount: Number,
-      items: {
-        type: Array,
-        required: true
-      },
-      fixedCostsStatus: {
-        type: Boolean,
-        required: true
-      }
+  name: "show-income",
+  props: {
+    amount: Number,
+    items: {
+      type: Array,
+      required: true
     },
-    components: {
-      SortableItem,
-      SortableList,
-    },
-    data() {
-      return {
-      };
-    },
-    methods: {
-      addDecimals: function (val, oldVal) {
+    fixedCostsStatus: {
+      type: Boolean,
+      required: true
+    }
+  },
+  components: {
+    SortableItem,
+    SortableList,
+  },
+  data() {
+    return {
+    };
+  },
+  methods: {
+    addDecimals: function (val, oldVal) {
       const number = +val.replace(/[^\d.,]/g, '');
       return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
     },
