@@ -20,9 +20,9 @@
     "dependencies": {
         "spectre.css": "^0.5.8",
         "vue": "^2.2.1",
-        "vue-slicksort": "^1.1.3",
         "vue-resource": "^1.2.1",
-        "vue-router": "^2.3.1"
+        "vue-router": "^2.3.1",
+        "vue-slicksort": "^1.1.3"
     },
     "devDependencies": {
         "babel-core": "^6.0.0",

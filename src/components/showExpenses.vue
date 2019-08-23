@@ -52,42 +52,41 @@ const SortableItem = {
 };
 
 export default {
-  name: "show-expenses",
-    props: {
-      amount: Number,
-      items: {
-        type: Array,
-        required: true
-      }
-    },
-    components: {
-      SortableItem,
-      SortableList,
-    },
-    data() {
-      return {
-        barExpenses: '65',
-        barSavings: '25',
-        barDisposableIncome: '10',
+  props: {
+    amount: Number,
+    items: {
+      type: Array,
+      required: true
+    }
+  },
+  components: {
+    SortableItem,
+    SortableList,
+  },
+  data() {
+    return {
+      barExpenses: '65',
+      barSavings: '25',
+      barDisposableIncome: '10',
 
-        toastStatus: false,
-        toastSuccess: false,
-        toastWarning: false,
-        toastError: false,
-        toastMessage: "Default text",
+      toastStatus: false,
+      toastSuccess: false,
+      toastWarning: false,
+      toastError: false,
+      toastMessage: "Default text",
 
-        expensesBadgeShow: false,
-        expensesBadgeTotal: 0,
+      expensesBadgeShow: false,
+      expensesBadgeTotal: 0,
 
-        expenseAmount: 0.00,
-        newExpenseTitle: '',
-        newExpenseAmount: '',
-        newExpenseFixedCost: Boolean,
-        expenses: []
-      };
-    },
-    methods: {
-      addDecimals: function (val, oldVal) {
+      expenseAmount: 0.00,
+      newExpenseTitle: '',
+      newExpenseAmount: '',
+      newExpenseFixedCost: Boolean,
+      expenses: []
+    };
+  },
+  methods: {
+    addDecimals: function (val, oldVal) {
       const number = +val.replace(/[^\d.,]/g, '');
       return isNaN(number) ? 0 : parseFloat(Math.round(number * 100) / 100).toFixed(2)
     },

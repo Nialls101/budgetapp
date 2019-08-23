@@ -52,7 +52,6 @@ const SortableItem = {
 };
 
 export default {
-  name: "show-income",
   props: {
     amount: Number,
     items: {

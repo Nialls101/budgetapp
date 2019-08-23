@@ -5,7 +5,6 @@
 </template>
 <script>
 export default {
-  name: "app-footer",
   props: {
     title: {
       type: String,

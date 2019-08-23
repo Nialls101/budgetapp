@@ -28,7 +28,6 @@
 </template>
 <script>
 export default {
-  name: "add-savings",
   props: {
     amount: Number,
     items: {

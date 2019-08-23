@@ -111,7 +111,6 @@
 </template>
 <script>
 export default {
-  name: "show-budget-summary",
   props: {
     toastStatus: {
       type: Boolean,

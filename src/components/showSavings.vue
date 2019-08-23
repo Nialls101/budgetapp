@@ -49,7 +49,6 @@ const SortableItem = {
 };
 
 export default {
-  name: "show-savings",
   props: {
     amount: Number,
     items: {

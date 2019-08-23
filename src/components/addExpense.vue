@@ -34,7 +34,6 @@
 </template>
 <script>
 export default {
-  name: "add-expense",
   props: {
     amount: Number,
     items: {
